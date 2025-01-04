@@ -8,34 +8,33 @@ func (pqueue *Queue) Enqueue(element int) {
 	pqueue.list = append(pqueue.list, element)
 }
 
-func (pqueue *Queue) Dequeue() (element int, isempty bool) {
+func (pqueue *Queue) Dequeue() (int, bool) {
 	if len(pqueue.list) == 0 {
 		return 0, false
-	} else {
-		passBack := pqueue.list[0]
-		pqueue.list = pqueue.list[1:]
-		return passBack, true
 	}
+
+	passBack := pqueue.list[0]
+	pqueue.list = pqueue.list[1:]
+	return passBack, true
+
 }
 
-func (pqueue *Queue) Peek() (element int, isempty bool) {
+func (pqueue *Queue) Peek() (int, bool) {
 	if len(pqueue.list) == 0 {
 		return 0, false
-	} else {
-		passBack := pqueue.list[0]
-		return passBack, true
 	}
+	return pqueue.list[0], true
 }
 
-func (pqueue *Queue) IsEmpty() (isempty bool) {
+func (pqueue *Queue) IsEmpty() bool {
 	if len(pqueue.list) == 0 {
 		return true
-	} else {
-		return false
 	}
+	return false
+
 }
 
-func (pqueue *Queue) Size() (size int) {
+func (pqueue *Queue) Size() int {
 	return len(pqueue.list)
 }
 
