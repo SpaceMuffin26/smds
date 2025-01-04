@@ -42,3 +42,14 @@ func (pqueue *Queue) Size() (size int) {
 func (pqueue *Queue) Clear() {
 	pqueue.list = pqueue.list[:0]
 }
+
+func (pqueue *Queue) Contains(element int) (contains bool) {
+	contains = false
+	for i := 0; i < len(pqueue.list); i++ {
+		if pqueue.list[i] == element {
+			contains = true
+			break
+		}
+	}
+	return contains
+}
