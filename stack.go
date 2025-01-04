@@ -28,3 +28,18 @@ func (pstack *Stack) IsEmpty() bool {
 func (pstack *Stack) Size() int {
 	return len(pstack.list)
 }
+
+func (pstack *Stack) Clear() {
+	pstack.list = pstack.list[:0]
+}
+
+func (pstack *Stack) Contains(element int) (contains bool) {
+	contains = false
+	for i := 0; i < len(pstack.list); i++ {
+		if pstack.list[i] == element {
+			contains = true
+			break
+		}
+	}
+	return contains
+}
