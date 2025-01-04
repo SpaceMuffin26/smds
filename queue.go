@@ -26,3 +26,11 @@ func (pqueue *Queue) Peek() (element int, isempty bool) {
 		return passBack, true
 	}
 }
+
+func (pqueue *Queue) IsEmpty() (isempty bool) {
+	if len(pqueue.list) == 0 {
+		return true
+	} else {
+		return false
+	}
+}
