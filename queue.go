@@ -34,3 +34,7 @@ func (pqueue *Queue) IsEmpty() (isempty bool) {
 		return false
 	}
 }
+
+func (pqueue *Queue) Size() (size int) {
+	return len(pqueue.list)
+}
