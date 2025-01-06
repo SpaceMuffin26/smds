@@ -14,7 +14,7 @@ type linkedList struct {
 
 // basically checks if the head of the list is nil and if so the new node will become a head
 // else the new node will become the node in front of head.
-func (plist *linkedList) PushFirst(data int) {
+func (plist *linkedList) Push(data int) {
 	newNode := node{value: data}
 	if plist.head != nil {
 		newNode.next = plist.head
@@ -33,6 +33,10 @@ func (plist *linkedList) PrintList() {
 		fmt.Printf("%d", currentNode.value)
 	}
 	return
+}
+
+func (plist *linkedList) Length() int {
+	return plist.length
 }
 
 func (plist *linkedList) Delete(data int) {
