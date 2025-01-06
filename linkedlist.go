@@ -35,4 +35,26 @@ func (plist *linkedList) PrintList() {
 	return
 }
 
-func (plist *linkedList) Delete (data int){
+func (plist *linkedList) Delete(data int) {
+	if plist.head == nil {
+		return
+	}
+
+	if plist.head.value == data {
+		plist.length--
+		plist.head = plist.head.next
+	}
+
+	current := plist.head
+	next := plist.head.next
+
+	for next != nil {
+		if next.value == data {
+			current.next = next.next
+			plist.length--
+			return
+		}
+		current = next
+		next = next.next
+	}
+}
