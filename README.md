@@ -24,6 +24,6 @@ Contains(int) -- returns a bool based on if such integer exists in a queue.
 
 Push(int) -- inserts an integer on top of the structure.
 PrintList() -- prints the entirety of the list.
-Length() -- returnes an integer size of the structure.
+Length() -- returns an integer size of the structure.
 Delete(int) -- finds and deletes the given integer.
 
